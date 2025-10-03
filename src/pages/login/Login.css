@@ -1,0 +1,104 @@
+/* Full Page Centering */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e6f7f1, #f4faff); /* soft farm green + sky blue */
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Card Style Box */
+.login-box {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-4px);
+}
+
+/* Logo or Icon */
+.login-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+}
+
+/* Title */
+.login-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2d3748;
+}
+
+/* Input Group */
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #38a169; /* green border on focus */
+  box-shadow: 0 0 6px rgba(56, 161, 105, 0.4);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #38a169, #2f855a); /* farm green */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #2f855a, #276749);
+}
+
+/* Link Section */
+.login-links {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.login-links a {
+  color: #3182ce;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.login-links a:hover {
+  color: #2b6cb0;
+}
