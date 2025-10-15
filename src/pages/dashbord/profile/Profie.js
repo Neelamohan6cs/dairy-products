@@ -1,45 +1,85 @@
-import React from "react";
-import profileImg from "../../../img/profile.jpg"; // Replace with actual image path
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {
+  setName,
+  setState,
+  setDistrict,
+  setPincode,
+  setAddress,
+} from "../../../features/details/userdetailsSlice";
+import "./Profile.css";
 
 function Profile() {
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userdetails);
+
+  const handleContinue = () => {
+    if (!user.name || !user.state || !user.district || !user.pincode || !user.address) {
+      alert("⚠️ Please fill all fields!");
+      return;
+    }
+    alert("✅ Details saved successfully!");
+    navigate("/dashbord");
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-xl w-full max-w-3xl p-6">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold text-green-700">Profile</h1>
-          <button className="text-green-600 hover:underline font-medium">Edit Profile</button>
-        </div>
+    <div className="profile-container">
+      <div className="profile-frame">
+        <h2 className="profile-title">Edit Your Details</h2>
 
-        {/* Profile Info */}
-        <div className="flex items-center gap-6 mb-6">
-          <img
-            src={profileImg}
-            alt="User"
-            className="w-24 h-24 rounded-full border-4 border-green-200 object-cover"
+        <div className="profile-row">
+          <label>Name :</label>
+          <input
+            type="text"
+            value={user.name}
+            onChange={(e) => dispatch(setName(e.target.value))}
+            placeholder="Enter name "
           />
-          <div>
-            <h2 className="text-xl font-semibold text-gray-800">Neela Mohan</h2>
-            <p className="text-gray-600">📱 +91 98765 43210</p>
-            <p className="text-gray-600">🏠 123, Agri Street, Perambalur, Tamil Nadu - 621212</p>
-          </div>
         </div>
 
-        {/* Settings Sections */}
-        <div className="space-y-4">
-          <button className="w-full text-left px-4 py-3 bg-green-100 rounded-lg hover:bg-green-200 font-medium text-green-800">
-            🛒 My Orders
-          </button>
-          <button className="w-full text-left px-4 py-3 bg-green-100 rounded-lg hover:bg-green-200 font-medium text-green-800">
-            🆘 Help & Support
-          </button>
-          <button className="w-full text-left px-4 py-3 bg-green-100 rounded-lg hover:bg-green-200 font-medium text-green-800">
-            🌐 Language Settings
-          </button>
-          <button className="w-full text-left px-4 py-3 bg-red-100 rounded-lg hover:bg-red-200 font-medium text-red-700">
-            🚪 Logout
-          </button>
+        <div className="profile-row">
+          <label>State :</label>
+          <input
+            type="text"
+            value={user.state}
+            onChange={(e) => dispatch(setState(e.target.value))}
+            placeholder="Enter state (e.g., Tamil Nadu)"
+          />
         </div>
+
+        <div className="profile-row">
+          <label>District :</label>
+          <input
+            type="text"
+            value={user.district}
+            onChange={(e) => dispatch(setDistrict(e.target.value))}
+            placeholder="Enter district"
+          />
+        </div>
+
+        <div className="profile-row">
+          <label>Pincode :</label>
+          <input
+            type="number"
+            value={user.pincode}
+            onChange={(e) => dispatch(setPincode(e.target.value))}
+            placeholder="Enter pincode"
+          />
+        </div>
+
+        <div className="profile-row">
+          <label>Address :</label>
+          <textarea
+            rows="2"
+            value={user.address}
+            onChange={(e) => dispatch(setAddress(e.target.value))}
+            placeholder="Enter full address"
+          ></textarea>
+        </div>
+
+        <button onClick={handleContinue} className="profile-btn">Continue</button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ function CheackDetails() {
   const [newAddress, setNewAddress] = useState("");
 
   const handleContinue = () => {
-    navigate("/payment");
+    navigate("/dashbord");
   };
 
   return (

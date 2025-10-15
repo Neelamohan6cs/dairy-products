@@ -6,7 +6,7 @@ function Header() {
   const navigate = useNavigate();
 
   function Ongoing() {
-    navigate("/dashbord/myorders/ongoing");
+    navigate("/dashbord/myorders/");
   }
   function Deliverd() {
     navigate("/dashbord/myorders/deliverd");
@@ -29,12 +29,7 @@ function Header() {
       <h1 className="orders-title">My Orders</h1>
 
       {/* Search bar */}
-      <input
-        type="text"
-        className="orders-search"
-        placeholder="Search orders..."
-      />
-
+      
       {/* Buttons */}
       <div className="orders-buttons">
         <button onClick={Ongoing} className="order-btn active">

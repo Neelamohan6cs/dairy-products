@@ -12,29 +12,39 @@ import Trackorders from './pages/dashbord/orders/Trackorders';
 import Cancelorder from './pages/dashbord/orders/Cancelorder';
 import Deliverd from './pages/dashbord/orders/Deliverd';
 import Cancelled from './pages/dashbord/orders/Cancelled';
-function Approutes(){
-    return(
-        <Routes>
-            <Route path='/' element={<Login/>}/>
-            <Route path='/personldetails' element={<Persnoldetails/>}/>
-            <Route path='/dashbord' element={<Dashbord/>}/>
-            <Route path='/dashbord/profile' element={<Profile/>}/>
-            <Route path='/dashbord/buy' element={<Buy/>}/>
-            <Route path='/dashbord/buy/cheackdetails' element={<CheackDetails/>}/>
-            <Route path='/payment' element={<Payment/>}/>
-            <Route path="/dashbord/myorders" element={<Myorders/>}>
-                {/* Nested Route */}
-                <Route path="ongoing" element={<Ongoing/>}/>
-                <Route path="trackorders" element={<Trackorders/>}/>
-                <Route path="cancelorder" element={<Cancelorder/>}/>
-
-                <Route path="deliverd" element={<Deliverd/>} />
-                <Route path="cancelled" element={<Cancelled/>} />
+import Main from './pages/dashbord/Main';
+import Pop from './pages/demo/Profilepop';
 
 
-            </Route>
-             
-        </Routes>
-    )
+
+function Approutes() {
+  return (
+    <Routes>
+      <Route path='/pop' element={<Pop />} />
+      
+
+
+      <Route path='/' element={<Login />} />
+      <Route path='/personldetails' element={<Persnoldetails />} />
+
+      <Route path='/dashbord' element={<Main />}>
+        <Route index element={<Dashbord />} />
+        <Route path='profile' element={<Profile />} />
+        <Route path='buy' element={<Buy />} />
+        <Route path='buy/cheackdetails' element={<CheackDetails />} />
+        <Route path='payment' element={<Payment />} />
+        
+
+        <Route path='myorders' element={<Myorders />}>
+          <Route index element={<Ongoing />} />
+          <Route path='trackorders' element={<Trackorders />} />
+          <Route path='cancelorder' element={<Cancelorder />} />
+          <Route path='deliverd' element={<Deliverd />} />
+          <Route path='cancelled' element={<Cancelled />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
 }
+
 export default Approutes;

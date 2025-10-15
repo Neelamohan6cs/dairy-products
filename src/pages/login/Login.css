@@ -1,104 +1,107 @@
-/* Full Page Centering */
+/* Background and container */
 .login-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #e6f7f1, #f4faff); /* soft farm green + sky blue */
-  font-family: 'Poppins', Arial, sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+  background: white;
 }
 
-/* Card Style Box */
-.login-box {
+/* Card styling */
+.login-card {
   background: #fff;
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  width: 360px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.login-box:hover {
-  transform: translateY(-4px);
-}
-
-/* Logo or Icon */
-.login-logo {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 15px;
+  padding: 2rem 2.5rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1f1b6;
 }
 
 /* Title */
 .login-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #2d3748;
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-align: center;
+  color: #228b22;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
-/* Input Group */
-.form-group {
-  margin-bottom: 18px;
-  text-align: left;
-}
-
-.form-group label {
+/* Label */
+.input-label {
   display: block;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 600;
   margin-bottom: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #4a5568;
 }
 
-.form-group input {
+/* Input fields */
+.input-field {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #cbd5e0;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
   border-radius: 10px;
+  font-size: 1rem;
   outline: none;
-  font-size: 14px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.form-group input:focus {
-  border-color: #38a169; /* green border on focus */
-  box-shadow: 0 0 6px rgba(56, 161, 105, 0.4);
+.input-field:focus {
+  border-color: #38a169;
+  box-shadow: 0 0 6px rgba(72, 187, 120, 0.3);
 }
 
-/* Button */
+/* Buttons */
+.otp-btn,
 .login-btn {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #38a169, #2f855a); /* farm green */
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 1rem;
   font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.otp-btn {
+  background-color: #f9f871;
+  color: #333;
+}
+
+.otp-btn:hover {
+  background-color: #f0e568;
+}
+
+.otp-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-btn {
+  background-color: #38a169;
+  color: white;
+  margin-top: 0.5rem;
 }
 
 .login-btn:hover {
-  background: linear-gradient(135deg, #2f855a, #276749);
+  background-color: #2f855a;
 }
 
-/* Link Section */
-.login-links {
-  margin-top: 15px;
-  font-size: 13px;
-  color: #4a5568;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.login-links a {
-  color: #3182ce;
-  text-decoration: none;
-  margin: 0 5px;
-  transition: color 0.3s;
-}
-
-.login-links a:hover {
-  color: #2b6cb0;
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
 }

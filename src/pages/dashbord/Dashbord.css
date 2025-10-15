@@ -1,183 +1,340 @@
-/* General Header Layout */
-/* Header Container */
-.header {
+/* ============================= */
+/*   ECOMMERCE HEADER (FINAL)    */
+/* ============================= */
+
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #fdfdfd, #f0f0f0);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  padding: 18px 30px;   /* increased padding for taller header */
+  background: linear-gradient(135deg, #ffffff, #f8f9fb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 10px 18px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #e6e6e6;
+  border-bottom: 1.5px solid #e0e0e0;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
-/* Left Section (Logo only) */
+/* ---------- LOGO ---------- */
 .left-section {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
+
 .logo {
-  width: 60px;   /* bigger logo */
-  height: 60px;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  cursor: pointer;
 }
 
-/* Center - Company Name + Search */
-.center-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-}
-
+/* ---------- COMPANY NAME ---------- */
 .company-name {
-  font-size: 1.6rem;   /* bigger name */
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 6px;
+  color: #1a202c;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
-/* Search Bar */
+/* ---------- SEARCH BAR ---------- */
 .search-bar {
-  width: 350px;   /* fixed smaller width */
+  flex-shrink: 0;
+  width: 160px; /* small size for PC */
+  position: relative;
 }
+
 .search-bar input {
   width: 100%;
-  padding: 10px 14px;
-  border: 1.5px solid #ddd;
-  border-radius: 25px;
+  padding: 7px 30px 7px 12px;
+  border: 1.4px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
   outline: none;
-  font-size: 0.95rem;
-  transition: 0.3s;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
+
 .search-bar input:focus {
-  border-color: #5c9d3a;
-  box-shadow: 0 0 8px rgba(92, 157, 58, 0.3);
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.25);
 }
 
-/* Right Section */
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 0.9rem;
 }
 
-/* Notification Button */
+/* ---------- ICONS ---------- */
 .icon-btn {
   position: relative;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.icon-btn:hover {
-  color: #5c9d3a;
-}
-.badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: #e74c3c;
-  color: white;
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
-
-/* Profile Button */
-.profile-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  padding: 6px 14px;
+  font-size: 1.3rem;
+  color: #333;
   cursor: pointer;
   transition: 0.3s;
 }
-.profile-btn:hover {
-  border-color: #5c9d3a;
-  box-shadow: 0 0 6px rgba(92, 157, 58, 0.3);
+
+.icon-btn:hover {
+  color: #4caf50;
+  transform: scale(1.1);
 }
-.avatar {
-  width: 36px;
-  height: 36px;
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 5px;
   border-radius: 50%;
 }
+
+/* ---------- PROFILE BUTTON ---------- */
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.profile-btn:hover {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.25);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .username {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #2c3e50;
+  white-space: nowrap;
 }
 
+/* ---------- RESPONSIVE: MOBILE VIEW ---------- */
 
+@media (max-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 8px 10px;
+    gap: 6px;
+  }
 
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    width: 100px; /* smaller search bar for mobile */
+    order: 3;
+  }
+
+  .search-bar input {
+    padding: 5px 22px 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .icon-btn {
+    font-size: 1.1rem;
+  }
+
+  .avatar {
+    width: 26px;
+    height: 26px;
+  }
+
+  .username {
+    display: none; /* hide text to save space */
+  }
+
+  .profile-btn {
+    padding: 2px 6px;
+  }
+}
+
+/* Super small screens */
+@media (max-width: 420px) {
+  .search-bar {
+    width: 70px;
+  }
+
+  .company-name {
+    font-size: 0.9rem;
+  }
+}
+/* ---------- CAROUSEL / BANNER ---------- */
+.carousel {
+  width: 100vw;
+  height: auto;       /* full screen height */
+  overflow: visible;
+  position: relative;
+}
 
 .carousel img {
-  width: 100%;
-  height: 450px;        /* reduced height (adjust as needed: 250px / 300px / 40vh) */
-  object-fit: cover;    /* crop image without stretching */
-  object-position: center; /* keep main subject in center */
-  border-radius: 6px;
+  width: 100%;         /* fill container */
+  height: 50%;
+  display: block;
+  object-fit: cover;   /* cover full container, may crop edges */
+  object-position: center;
+  background-color: #fff;
 }
 
+/* ---------- RESPONSIVE (OPTIONAL HEIGHT LIMITS) ---------- */
 
+@media (min-width: 1025px) {
+  .carousel img {
+    max-height: 450px;   /* ideal banner height on desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    max-height: 320px;   /* smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel img {
+    max-height: 240px;
+  }
+}
 /* Categories */
-.categories {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px 0;
-  flex-wrap: wrap;
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0;
+  font-weight: 600;
 }
 
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
 
 .category-card {
-  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.image-container {
+  position: relative;
   border: 2px solid #ddd;
   border-radius: 8px;
-  padding: 22px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  cursor: pointer;
+  overflow: hidden;
 }
-.buy-button {
-  background-color: #16a34a; /* Tailwind green-600 */
-  color: white;
-  padding: 0.5rem 1rem;
+
+.image-container img {
+  width: 200%;
+  height: 220px;
+  object-fit: contain;
+  background-color:white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.action-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap; /* Ensures good layout on mobile */
+}
+
+.icon-button {
+  background: transparent;
   border: none;
-  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.2);
+}
+
+.buy-button {
+  background: #ff9800;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-top: 0.5rem;
+  transition: background 0.3s ease;
 }
 
 .buy-button:hover {
-  background-color: #15803d; /* Tailwind green-700 */
+  background: #e68900;
+}
+
+/* ✅ Mobile optimization */
+@media (max-width: 600px) {
+  .category-card {
+    padding: 10px;
+  }
+
+  .image-container img {
+    height: 180px;
+  }
+
+  .action-row {
+    gap: 10px;
+  }
+
+  .buy-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }
 
 
-.category-card:hover {
-  transform: scale(1.05);
-}
 
-.category-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.category-card p {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333;
-}
 
 .check-container {
   min-height: 100vh;
@@ -387,3 +544,4 @@
 
 
 
+ 

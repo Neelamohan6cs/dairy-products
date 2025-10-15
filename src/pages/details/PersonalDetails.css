@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0fdf4, #e0f2fe); /* soft green to light blue */
+  background: white; /* soft green to light blue */
   font-family: 'Poppins', Arial, sans-serif;
 }
 

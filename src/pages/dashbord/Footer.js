@@ -7,7 +7,7 @@ function Footer() {
 
         {/* Company Info */}
         <div className="footer-section">
-          <h2 className="footer-logo">DairyMart</h2>
+          <h2 className="footer-logo">Sri Suwasthika</h2>
           <p>Your trusted store for farm-fresh products.</p>
         </div>
 
@@ -42,7 +42,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 DairyMart. All rights reserved.</p>
+        <p>© 2025 Suvasthika. All rights reserved.</p>
       </div>
     </footer>
   );
